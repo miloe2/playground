@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .navigator {
   width: 400px;
   height: 100vh;
@@ -11,7 +15,7 @@
 .openNaviBtn,
 .closeNaviBtn {
   width: 40px;
-  height: 40px;
+  height: 40px;ㅐ
   border-radius: 9999px;
 }
 
@@ -24,7 +28,7 @@
 }
 
 main {
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
   padding-left: 392px;
   position: relative;
 }
@@ -32,13 +36,17 @@ main {
 .contentsGrid {
   /* width: 100%; */
   padding: 24px 16px;
-  background-color: #54eaee;
+  /* background-color: #54eaee; */
 }
 
 .contentBox {
   width: 100%;
   min-height: 160px;
-  background-color: #efe87d;
+  /* background-color: #efe87d; */
+  border: 1px solid #aaa;
+  position: relative;
+  display:flex;
+  align-items: center;
 }
 
 .tutorialWrap {
@@ -77,8 +85,12 @@ footer {
   }
 
   .contentsGrid {
-    width: calc(100% - 8px);
-    padding: 0px 4px;
+    width: 100%;
+    padding: 0;
+  }
+
+  .contentBox {
+    margin: 12px 0;
   }
 
   .tutorialWrap .explainText1 {

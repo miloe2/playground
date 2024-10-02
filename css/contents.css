@@ -1,0 +1,49 @@
+.sliderContainer {
+  width: 100%;
+  cursor: pointer;
+}
+
+.sliderTrack {
+  position: relative;
+  background-color: #eee;
+  width: calc(100% - 50px);
+  height: 12px;
+  border-radius: 999px;
+  margin: 0 auto;
+}
+
+.sliderActive {
+  position: absolute;
+  top: 0;
+  width: 0%;
+  height: 12px;
+  border-radius: 999px;
+  background-image: linear-gradient(90deg, #b3e5fc, #4fc3f7);
+  transition: width 0.5s;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.sliderThumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 999px;
+  background-color: #ffe;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 2px #ddd;
+  transform: translateX(10px);
+  position: absolute;
+}
+
+.sliderDesc {
+  background-color: #111;
+  padding: 4px 2px;
+  border-radius: 4px;
+  text-align: center;
+  min-width: 40px;
+  font-size: 14px;
+  color: #fff;
+  transform: translate(18px, -32px);
+  position: relative;
+}
