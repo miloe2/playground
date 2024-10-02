@@ -1,15 +1,31 @@
-const container = document.querySelector('.sliderContainer');
-const track = document.querySelector('.sliderTrack');
-const active = document.querySelector('.sliderActive');
-const desc = document.querySelector('.sliderDesc');
-const trackMargin = 25;
+class Slider {
+  constructor(sliderContainer, sliderTrack, sliderActive, sliderDesc) {
+    this.container = document.querySelector(sliderContainer);
+    this.track = document.querySelector(sliderTrack);
+    this.active = document.querySelector(sliderActive);
+    this.desc = document.querySelector(sliderDesc);
 
-container.addEventListener('click', (event) => {
-  let clickedX = event.clientX;
-  let trackRect = track.getBoundingClientRect();
-  let trackWidth = track.clientWidth;
-  let percent = Math.round((clickedX - trackRect.left) / trackWidth * 100);
-  percent = Math.max(0, Math.min(100, percent));
-  active.style.width = `${percent}%`;
-  desc.innerHTML = `${percent}%`;
-})
+    this.init();
+  }
+
+  init() {
+    this.container.addEventListener('click', (event) => {
+      this.handleSliderClick(event);
+    });
+  }
+
+  calculatePercent(clientX) {
+    const trackRect = this.track.getBoundingClientRect();
+    const trackWidth = this.track.clientWidth;
+    const percent = Math.round((clientX - trackRect.left) / trackWidth * 100);
+    return Math.max(0, Math.min(percent, 100));
+  }
+
+  handleSliderClick(event) {
+    const clickedX = event.clientX;
+    const percent = this.calculatePercent(clickedX);
+    this.active.style.width = `${percent}%`;
+    this.desc.textContent = `${percent}%`;
+  }
+}
+const mySlider = new Slider('.sliderContainer', '.sliderTrack', '.sliderActive', '.sliderDesc');
