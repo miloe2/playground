@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 
 <head>
+  <!-- <meta lang="ko"> -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>replit</title>
   <link href="./css/main.css" rel="stylesheet" type="text/css" />
   <link href="./css/contents.css" rel="stylesheet" type="text/css" />
+  <link href="./css/reset.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -15,10 +17,9 @@
   <button class="openNaviBtn">open</button>
   <main>
     <nav class="navigator">
-      <div class="naviBtnCont">
+      <!-- <div class="naviBtnCont">
         <button class="closeNaviBtn">close</button>
-
-      </div>
+      </div> -->
       <ul>
         <li>Home</li>
         <li>Playground</li>
@@ -26,27 +27,59 @@
         <li>Theme</li>
       </ul>
     </nav>
+
+    <div class="titleBox">
+      <h1>playground</h1>
+    </div>
+
     <section class="contentsGrid">
-      <article class="contentBox">
+      <article class="contentWrap">
+        <div class="contentBox">
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+            industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+            electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
+            Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
+            .</p>
+        </div>
+        <div class="contentDesc">
+          <p class="title">title</p>
+          <p class="desc">desc</p>
+        </div>
+      </article>
+
+
+
+      <article class="contentWrap">
+        <div class="contentBox">
+          <div class="sliderContainer">
+            <div class="sliderTrack">
+              <div class="sliderActive">
+                <div class="sliderThumb"></div>
+                <div class="sliderDesc">0%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="contentDesc">
+          <p class="title">Slider</p>
+          <p class="desc">마우스 clientX와 Div의 크기를 계산하여 슬라이더를 움직입시다. </p>
+          <button class="descBtn">How it Work</button>
+        </div>
+      </article>
+
+
+      <article class="contentWrap">
         <h1>Hello</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quibusdam.</p>
       </article>
 
-    </section>
 
-    <section class="contentsGrid">
-      <article class="contentBox">
-        <div class="sliderContainer">
-          <div class="sliderTrack">
-            <div class="sliderActive">
-              <div class="sliderThumb"></div>
-              <div class="sliderDesc">0%</div>
 
-            </div>
-          </div>
 
-        </div>
-      </article>
+
+
+
     </section>
 
     <!-- <section class="sec-intro">

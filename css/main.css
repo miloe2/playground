@@ -1,15 +1,100 @@
-* {
-  box-sizing: border-box;
+/* common */
+main {
+  /* padding-left: 19.5rem; */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: aqua; */
+  padding: 0 2rem 0 19.5rem;
+
 }
 
+.titleBox {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1.5rem 0rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.contentsGrid {
+  margin: 0 auto;
+  /* background-color: blue; */
+  width: calc(100%);
+  /* padding-right: 2rem; */
+  max-width: calc(1024px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+}
+
+.contentWrap {
+  width: 100%;
+  /* background-color: #efe87d; */
+  display: flex;
+  flex-direction: column;
+}
+
+.contentBox {
+  border: 1px solid #eee;
+  padding: 1rem;
+  min-height: 160px;
+  /* background-color: yellowgreen; */
+  position: relative;
+  display: flex;
+  width: 100%;
+}
+
+.contentDesc {
+  margin-top: auto;
+}
+
+.contentDesc .title {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.contentDesc .desc {
+  margin-top: 0.75rem;
+  font-size: 14px;
+}
+
+.contentDesc .descBtn {
+  cursor: pointer;
+  margin-top: 1.0rem;
+  font-size: 12px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #aaa;
+  border-radius: 999px;
+}
+
+footer {
+  width: 100%;
+  height: 100vh;
+}
+
+/*** common */
+
+
 .navigator {
-  width: 400px;
+  width: 17.5rem;
   height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #f5f;
+  background-color: white;
   display: relative;
+  border-right: 1px solid #eee;
+  padding: 4rem 2rem;
+  /* margin-right: 2rem; */
+  z-index: 999;
+}
+
+nav ul li {
+  margin: 1.5rem 0;
+  cursor: pointer;
 }
 
 .openNaviBtn,
@@ -20,34 +105,18 @@
 }
 
 .naviBtnCont {
+  position: absolute;
   width: 100%;
   height: auto;
   display: flex;
   justify-content: end;
   align-items: center;
+  background-color: red;
 }
 
-main {
-  /* border: 1px solid #333; */
-  padding-left: 392px;
-  position: relative;
-}
 
-.contentsGrid {
-  /* width: 100%; */
-  padding: 24px 16px;
-  /* background-color: #54eaee; */
-}
 
-.contentBox {
-  width: 100%;
-  min-height: 160px;
-  /* background-color: #efe87d; */
-  border: 1px solid #aaa;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
+
 
 .tutorialWrap {
   position: abosolute;
@@ -60,13 +129,19 @@ main {
   opacity: 0.5;
 }
 
-footer {
-  width: 100%;
-  height: 100vh;
-}
 
-
+/* 768px  */
 @media (max-width: 768px) {
+  main {
+    width: cals(100% - 16px);
+    padding: 24px 8px;
+    display: block;
+  }
+
+  .contentWrap {
+    margin: 12px 0;
+  }
+
   .navigator {
     width: calc(60% - 32px);
     padding: 0 16px;
@@ -78,54 +153,52 @@ footer {
     transform: translateX(0%);
   }
 
-  main {
-    width: cals(100% - 16px);
-    padding: 24px 8px;
-    display: block;
-  }
-
-  .contentsGrid {
-    width: 100%;
-    padding: 0;
-  }
-
-  .contentBox {
-    margin: 12px 0;
-  }
-
   .tutorialWrap .explainText1 {
     top: 5rem;
     left: 4rem;
   }
 
-  .sec-intro {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
+}
 
-  .sec-intro-img {
-    width: 100%;
-    height: 240px;
-    background-color: #eee;
-  }
+/* 1024px  */
+@media (max-width: 1240px) {
 
-  .sec-intro-btn {
-    border: 1px solid #333;
-    padding: 8px 16px;
-    background-color: #eee;
-    border-radius: 999px;
-    margin-top: 16px;
-    /* width: 120px;
-    height: auto; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+  .contentsGrid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    padding-right: 0rem;
+    /* padding: 1.5rem 2rem 0 0; */
   }
 
 
 }
+
+
+
+/* 
+.sec-intro {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.sec-intro-img {
+  width: 100%;
+  height: 240px;
+  background-color: #eee;
+}
+
+.sec-intro-btn {
+  border: 1px solid #333;
+  padding: 8px 16px;
+  background-color: #eee;
+  border-radius: 999px;
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
