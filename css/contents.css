@@ -3,7 +3,7 @@
   height: 12px;
   cursor: pointer;
   /* background-color: red; */
-  margin-top: 4.5rem;
+  margin-top: 3.0rem;
 }
 
 .sliderTrack {
@@ -21,7 +21,7 @@
   width: 50%;
   height: 12px;
   border-radius: 999px;
-  background-image: linear-gradient(90deg, #b3e5fc, #4fc3f7);
+  background-image: linear-gradient(90deg, var(--accent-light), var(--accent));
   transition: width 0.5s;
   display: flex;
   justify-content: end;
@@ -40,7 +40,7 @@
 }
 
 .sliderDesc {
-  background-color: #111;
+  background-color: var(--text);
   padding: 0.5rem 0.25px;
   border-radius: 4px;
   text-align: center;
@@ -59,5 +59,23 @@
   display: block;
   width: 100%;
   background-color: #aaa;
+  cursor: crosshair;
   /* height: 100%; */
+}
+
+.scratchController {
+  display: flex;
+  font-size: 12px;
+  margin-top: 1.25rem;
+
+}
+
+.scratchButtons button {
+  background-color: #eee;
+  border-radius: 99px;
+  padding: 0.25rem 0.5rem;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  margin-left: 1.5rem;
+
 }

@@ -5,18 +5,19 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /* background-color: aqua; */
-  padding: 0 2rem 0 19.5rem;
-
+  background-color: var(--bg);
+  padding: 4rem 2rem 0 19.5rem;
+  color:
 }
 
 .titleBox {
   width: 100%;
   max-width: 1024px;
   margin: 0 auto;
-  padding: 1.5rem 0rem;
+  padding: 1.5rem 0;
   font-size: 1.5rem;
   font-weight: bold;
+  color: var(--accent);
 }
 
 .contentsGrid {
@@ -38,17 +39,15 @@ main {
 }
 
 .contentBox {
-  border: 1px solid #eee;
-  padding: 1rem;
+  border: 1px solid var(--border);
+  padding: 2rem;
   min-height: 160px;
   /* background-color: yellowgreen; */
   position: relative;
   display: flex;
   width: 100%;
-}
-
-.contentDesc {
-  margin-top: auto;
+  background-color: var(--primary);
+  border-radius: 0.5rem;
 }
 
 .contentDesc .title {
@@ -71,9 +70,14 @@ main {
   border-radius: 999px;
 }
 
+.contentDesc {
+  margin-bottom: 1.5rem;
+}
+
 footer {
   width: 100%;
   height: 100vh;
+  background-color: var(--bg);
 }
 
 /*** common */
@@ -85,9 +89,9 @@ footer {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color: var(--bg);
   display: relative;
-  border-right: 1px solid #eee;
+  border-right: 1px solid var(--border);
   padding: 4rem 2rem;
   /* margin-right: 2rem; */
   z-index: 999;
@@ -98,26 +102,35 @@ nav ul li {
   cursor: pointer;
 }
 
+.mobileNavi {
+  display: none;
+}
+
 .openNaviBtn,
 .closeNaviBtn {
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background-color: transparent;
+}
+
+.openNaviBtn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .naviBtnCont {
   position: absolute;
-  width: calc(100% -2rem);
-  height: auto;
-  display: flex;
+  top: 0;
   justify-content: end;
   align-items: center;
-  /* background-color: red; */
+  width: calc(100% -2rem);
+  background-color: red;
+  height: auto;
+  display: none;
+
 }
-
-
-
-
 
 .tutorialWrap {
   position: abosolute;
@@ -135,17 +148,17 @@ nav ul li {
 @media (max-width: 768px) {
   main {
     width: cals(100% - 2rem);
-    padding: 24px 1rem;
+    padding: 24px 1.5rem;
     display: block;
   }
 
-  .contentWrap {
-    margin: 12px 0;
+  .contentBox {
+    padding: 2rem 1.0rem;
   }
 
   .navigator {
     width: calc(60% - 32px);
-    padding: 0 16px;
+    padding: 4rem 1.5rem;
     transition: all 0.5s;
     transform: translateX(-100%);
   }
@@ -153,6 +166,18 @@ nav ul li {
   .navigator.active {
     transform: translateX(0%);
   }
+
+
+  .mobileNavi {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .closeNaviBtn {
+    display: flex;
+  }
+
 
   .tutorialWrap .explainText1 {
     top: 5rem;
@@ -204,11 +229,13 @@ nav ul li {
   align-items: center;
 } */
 
-[data-theme="light"] {
-  background-color: #eae3cc;
-  color: #2d2820;
-  --color-primary: #e29c97;
-
+[data-theme="retro"] {
+  --bg: #eae3cc;
+  --border: #D9D1BA;
+  --text: #2d2820;
+  --primary: #E4D8B4;
+  --accent: #F35248;
+  --accent-light: #EF9995;
 }
 
 :root {

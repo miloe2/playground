@@ -11,12 +11,18 @@
   <link href="./css/reset.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body data-theme="light">
+<body data-theme="retro">
   <header>
   </header>
-  <button class="openNaviBtn">open</button>
-  <button class="themeBtn">Theme</button>
+  <!-- <button class="themeBtn">Theme</button> -->
   <main>
+    <div class="mobileNavi">
+      <div>logo</div>
+
+      <button class="openNaviBtn">
+        <img src="./assets/menu-icon.svg">
+      </button>
+    </div>
     <nav class="navigator">
       <div class="naviBtnCont">
         <button class="closeNaviBtn">close</button>
@@ -74,17 +80,20 @@
         <div class="contentBox">
           <div class="scratchContainer">
             <canvas id="scratchCanvas"></canvas>
-            <button class="scratchClear">clear</button>
-            <div class="scratchButtons">
-              <buttons class="larger">+</buttons>
-              <buttons class="smaller">-</buttons>
+            <div class="scratchController">
+              <button class="scratchClear">clear</button>
+              <div class="scratchButtons">
+                <button class="larger">+</button>
+                <button class="smaller">-</button>
+              </div>
             </div>
           </div>
-
-
         </div>
-        <h1>Hello</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quibusdam.</p>
+        <div class="contentDesc">
+          <p class="title">스크래치</p>
+          <p class="desc">canvas를 활용하여 복권을 긁어봅시다.</p>
+          <button class="descBtn">How it Work</button>
+        </div>
       </article>
 
 
