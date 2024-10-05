@@ -11,15 +11,16 @@
   <link href="./css/reset.css" rel="stylesheet" type="text/css" />
 </head>
 
-<body>
+<body data-theme="light">
   <header>
   </header>
   <button class="openNaviBtn">open</button>
+  <button class="themeBtn">Theme</button>
   <main>
     <nav class="navigator">
-      <!-- <div class="naviBtnCont">
+      <div class="naviBtnCont">
         <button class="closeNaviBtn">close</button>
-      </div> -->
+      </div>
       <ul>
         <li>Home</li>
         <li>Playground</li>
@@ -56,7 +57,7 @@
             <div class="sliderTrack">
               <div class="sliderActive">
                 <div class="sliderThumb"></div>
-                <div class="sliderDesc">0%</div>
+                <div class="sliderDesc">50%</div>
               </div>
             </div>
           </div>
@@ -70,6 +71,18 @@
 
 
       <article class="contentWrap">
+        <div class="contentBox">
+          <div class="scratchContainer">
+            <canvas id="scratchCanvas"></canvas>
+            <button class="scratchClear">clear</button>
+            <div class="scratchButtons">
+              <buttons class="larger">+</buttons>
+              <buttons class="smaller">-</buttons>
+            </div>
+          </div>
+
+
+        </div>
         <h1>Hello</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse, quibusdam.</p>
       </article>
@@ -98,7 +111,9 @@
   </footer>
 
   <script src="script.js"></script>
-  <script src="./script/slider.js"></script>
+  <script src="./script/slider.js">
+  </script>
+  <script src="./script/scratchCanvas.js"></script>
 </body>
 
 </html>
