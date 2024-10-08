@@ -133,7 +133,7 @@ nav ul li {
 }
 
 .tutorialWrap {
-  position: abosolute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -147,7 +147,7 @@ nav ul li {
 /* 768px  */
 @media (max-width: 768px) {
   main {
-    width: cals(100% - 2rem);
+    width: 100%;
     padding: 24px 1.5rem;
     display: block;
   }

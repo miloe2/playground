@@ -69,7 +69,7 @@ class ScratchCanvas {
   }
 
   drawInitCanvas = () => {
-    // this.ctx.fillStyle = '#555';
+    this.ctx.fillStyle = '#2d2820';
     this.drawText();
     this.ctx.fillRect(0, 0, this.canvas.width / window.devicePixelRatio, this.canvas.height / window.devicePixelRatio);
   }

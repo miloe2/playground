@@ -85,13 +85,14 @@
   width: 100%;
 }
 
-#scratchCavnas {
+#scratchCanvas {
   display: block;
   position: absolute;
+  background-color: transparent;
   width: 100%;
 }
 
 #canvasText {
-  position: absolute;
-  background-color: #aaa;
+  
+  background-color: var(--accent-light);
 }
