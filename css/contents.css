@@ -79,3 +79,19 @@
   margin-left: 1.5rem;
 
 }
+
+.scratchContainer {
+  position: relative;
+  width: 100%;
+}
+
+#scratchCavnas {
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+
+#canvasText {
+  position: absolute;
+  background-color: #aaa;
+}

@@ -1,13 +1,17 @@
 class ScratchCanvas {
-  constructor(canvasId, clearSelector, buttonsSelector) {
-    // console.log('here')
+  constructor(canvasId, textCanvasId, clearSelector, buttonsSelector, inputSelector) {
     this.canvas = document.querySelector(canvasId);
+    this.textCanvas = document.querySelector(textCanvasId);
     this.clearButton = document.querySelector(clearSelector);
     this.brushButtons = document.querySelectorAll(`${buttonsSelector} button`);
+    this.inputText = document.querySelector(inputSelector);
 
     this.ctx = this.canvas.getContext('2d');
+    this.ctxText = this.textCanvas.getContext('2d');
     this.isDrawing = false;
-    this.brush = 20;
+    this.brush = 120;
+    this.textValue = this.inputText.value;
+
     this.canvas.addEventListener('mousedown', this.startDrawing);
     this.canvas.addEventListener('mousemove', this.draw);
     this.canvas.addEventListener('mouseup', this.stopDrawing);
@@ -26,12 +30,14 @@ class ScratchCanvas {
         }
       })
     })
-    window.addEventListener('resize', this.resizeCanvas);
+    window.addEventListener('resize', debounce(this.resizeCanvas));
+    this.inputText.addEventListener('input', debounce(this.drawText.bind(this)));
     this.resizeCanvas();
 
   };
 
   resizeCanvas = () => {
+    if (!this.canvas) return;
     const pixelRatio = window.devicePixelRatio || 1;
     const width = this.canvas.offsetWidth;
     const height = width / 2.3;
@@ -41,12 +47,30 @@ class ScratchCanvas {
     this.canvas.style.width = `${width}px`;
     this.canvas.style.height = `${height}px`;
 
+    this.textCanvas.width = width * pixelRatio;
+    this.textCanvas.height = height * pixelRatio;
+    this.textCanvas.style.width = `${width}px`;
+    this.textCanvas.style.height = `${height}px`;
+
     this.ctx.scale(pixelRatio, pixelRatio);
+    this.ctxText.scale(pixelRatio, pixelRatio);
     this.drawInitCanvas();
+  };
+  drawText() {
+    this.textValue = this.inputText.value;
+    this.ctxText.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    this.ctxText.fillStyle = '#111';
+    const width = this.canvas.width / window.devicePixelRatio;
+    const height = this.canvas.height / window.devicePixelRatio;
+    const textWidth = (width / 2) - this.ctxText.measureText(this.textValue).width / 2;
+
+    this.ctxText.fillText(this.textValue, textWidth, height / 2);
+
   }
 
   drawInitCanvas = () => {
-    this.ctx.fillStyle = '#555';
+    // this.ctx.fillStyle = '#555';
+    this.drawText();
     this.ctx.fillRect(0, 0, this.canvas.width / window.devicePixelRatio, this.canvas.height / window.devicePixelRatio);
   }
 
@@ -93,4 +117,4 @@ class ScratchCanvas {
     this.brush = Math.max(1, this.brush + delta)
   };
 };
-const myCanvas = new ScratchCanvas('#scratchCanvas', '.scratchClear', '.scratchButtons');
+const myCanvas = new ScratchCanvas('#scratchCanvas', '#canvasText', '.scratchClear', '.scratchButtons', '.canvasInput');
